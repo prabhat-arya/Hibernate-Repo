@@ -24,6 +24,8 @@ public class OTMMTest {
 		boolean flag = false;
 		Package pkg = null;
 		Shippment shippment = null;
+		int g=100;
+		String s=null;
 
 		Map<String, Package> packages = null;
 
