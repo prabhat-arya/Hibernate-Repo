@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30 Jun, 2020 4:05:47 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.doto.entities">
+    <class name="DelevaryNote" table="DELEVARYNOTE">
+        <id name="airwayBillNo" type="int">
+            <column name="AIRWAYBILLNO" />
+            <generator class="foreign" >
+            <param name="property">parcel</param>
+            </generator>
+        </id>
+        <property name="receivedDate" type="java.util.Date">
+            <column name="RECEIVEDDATE" />
+        </property>
+        <property name="receiver" type="java.lang.String">
+            <column name="RECEIVER" />
+        </property>
+       <one-to-one name="parcel" class="Parcel" fetch="join"/>
+    </class>
+</hibernate-mapping>

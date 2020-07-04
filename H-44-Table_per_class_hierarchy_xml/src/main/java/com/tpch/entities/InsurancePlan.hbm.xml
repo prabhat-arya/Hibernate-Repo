@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28 May, 2020 5:16:22 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.tpch.entities">
+    <class name="InsurancePlan" table="INSURANCE_PLAN" discriminator-value="insurancePlane">
+        <id name="planNo" type="int">
+            <column name="PLANNO" />
+            <generator class="increment" />
+        </id>
+        <discriminator column="PLAN_TABLE"/>
+        <property name="planName" type="java.lang.String">
+            <column name="PLANNAME" />
+        </property>
+        <property name="minTenure" type="int">
+            <column name="MIN_TENURE" />
+        </property>
+        <property name="maxTenute" type="int">
+            <column name="MAX_TENUTE" />
+        </property>
+        <property name="minAge" type="int">
+            <column name="MIN_AGE" />
+        </property>
+        <property name="maxAge" type="int">
+            <column name="MAX_AGE" />
+        </property>
+        <property name="minInsuredAmount" type="double">
+            <column name="MIN_INSURED_AMOUNT" />
+        </property>
+        <property name="maxInsuredAmount" type="double">
+            <column name="MAX_INSURED_AMOUNT" />
+        </property>
+    </class>
+</hibernate-mapping>
